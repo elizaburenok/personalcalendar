@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useCalendar } from '../../context/CalendarContext'
 import { getWeekStart, getWeekDays, formatDate, getDayName } from '../../utils/dateUtils'
-import { Card } from '../../components'
 import './WeekView.css'
 
 const WeekView = () => {
@@ -47,7 +46,7 @@ const WeekView = () => {
           const isToday = formatDate(day) === formatDate(new Date())
 
           return (
-            <Card key={index} className={`day-card ${isToday ? 'day-card--today' : ''}`}>
+            <div key={index} className={`day-card ${isToday ? 'day-card--today' : ''}`}>
               <div className="day-header">
                 <h3>{getDayName(day, true)}</h3>
                 <span className="day-date">{formatDate(day, 'MM/DD')}</span>
@@ -69,7 +68,7 @@ const WeekView = () => {
                   ))
                 )}
               </div>
-            </Card>
+            </div>
           )
         })}
       </div>

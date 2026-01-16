@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useCalendar } from '../../context/CalendarContext'
 import { formatDate, getDayName } from '../../utils/dateUtils'
-import { Card, Input, Button } from '../../components'
 import './DayView.css'
 
 const DayView = () => {
@@ -38,15 +37,15 @@ const DayView = () => {
         />
       </div>
 
-      <Card className="day-info-card">
+      <div className="day-info-card">
         <h2>{getDayName(selectedDate)}</h2>
         <p className="day-date-full">{formatDate(selectedDate, 'MMMM DD, YYYY')}</p>
-      </Card>
+      </div>
 
-      <Card className="add-activity-card">
+      <div className="add-activity-card">
         <h3>Add Activity</h3>
         <div className="activity-form">
-          <Input
+          <input
             type="text"
             placeholder="Activity title"
             value={newActivity.title}
@@ -54,7 +53,7 @@ const DayView = () => {
               setNewActivity({ ...newActivity, title: e.target.value })
             }
           />
-          <Input
+          <input
             type="time"
             placeholder="Time"
             value={newActivity.time}
@@ -62,19 +61,19 @@ const DayView = () => {
               setNewActivity({ ...newActivity, time: e.target.value })
             }
           />
-          <Button onClick={handleAddActivity}>Add Activity</Button>
+          <button onClick={handleAddActivity}>Add Activity</button>
         </div>
-      </Card>
+      </div>
 
       <div className="activities-list">
         <h3>Planned Activities</h3>
         {sortedActivities.length === 0 ? (
-          <Card>
+          <div>
             <p className="no-activities">No activities planned for this day</p>
-          </Card>
+          </div>
         ) : (
           sortedActivities.map((activity) => (
-            <Card key={activity.id} className="activity-item">
+            <div key={activity.id} className="activity-item">
               <div className="activity-time">{activity.time}</div>
               <div className="activity-content">
                 <h4>{activity.title}</h4>
@@ -85,7 +84,7 @@ const DayView = () => {
               >
                 ×
               </button>
-            </Card>
+            </div>
           ))
         )}
       </div>

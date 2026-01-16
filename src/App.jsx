@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { CalendarProvider } from './context/CalendarContext'
 import { WeekView, DayView } from './pages'
-import { Button } from './components'
 import './App.css'
 
 function App() {
@@ -13,18 +12,16 @@ function App() {
         <header className="app-header">
           <h1>Personal Calendar</h1>
           <nav className="app-nav">
-            <Button
-              variant={currentView === 'week' ? 'primary' : 'outline'}
+            <button
               onClick={() => setCurrentView('week')}
             >
               Week View
-            </Button>
-            <Button
-              variant={currentView === 'day' ? 'primary' : 'outline'}
+            </button>
+            <button
               onClick={() => setCurrentView('day')}
             >
               Day View
-            </Button>
+            </button>
           </nav>
         </header>
 
