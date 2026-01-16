@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { CalendarProvider } from './context/CalendarContext'
-import { WeekView, DayView } from './pages'
+import TypographyTest from './pages/TypographyTest'
 import './App.css'
 
 function App() {
-  const [currentView, setCurrentView] = useState('week')
+  const [currentView, setCurrentView] = useState('typography')
 
   return (
     <CalendarProvider>
@@ -13,20 +13,15 @@ function App() {
           <h1>Personal Calendar</h1>
           <nav className="app-nav">
             <button
-              onClick={() => setCurrentView('week')}
+              onClick={() => setCurrentView('typography')}
             >
-              Week View
-            </button>
-            <button
-              onClick={() => setCurrentView('day')}
-            >
-              Day View
+              Typography Test
             </button>
           </nav>
         </header>
 
         <main className="app-main">
-          {currentView === 'week' ? <WeekView /> : <DayView />}
+          {currentView === 'typography' && <TypographyTest />}
         </main>
       </div>
     </CalendarProvider>
