@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Checkbox, DateText, DayOfWeekText, TaskText } from '../../components/atoms'
+import { Checkbox, DateText, DayOfWeekText, NoteLink, TaskText } from '../../components/atoms'
 import { TaskItem } from '../../components'
 import './ComponentTest.css'
 import '../../tokens/colors.css'
@@ -164,6 +164,43 @@ const ComponentTest = () => {
               </div>
               <div className="component-test-code">
                 DayOfWeekText on dark background (as designed)
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="component-test-section">
+          <h2>NoteLink</h2>
+          <div className="component-test-grid">
+            <div className="component-test-item">
+              <div className="component-test-label">Default (Interactive)</div>
+              <div className="component-test-preview">
+                <NoteLink onClick={() => alert('NoteLink clicked!')} />
+              </div>
+              <div className="component-test-code">
+                &lt;NoteLink onClick={'{handleClick}'} /&gt;
+              </div>
+            </div>
+
+            <div className="component-test-item">
+              <div className="component-test-label">On Dark Background</div>
+              <div className="component-test-preview" style={{ backgroundColor: '#191919', padding: '16px', borderRadius: '4px' }}>
+                <NoteLink onClick={() => alert('NoteLink clicked!')} />
+              </div>
+              <div className="component-test-code">
+                NoteLink on dark background (as designed)
+              </div>
+            </div>
+
+            <div className="component-test-item">
+              <div className="component-test-label">Multiple NoteLinks</div>
+              <div className="component-test-preview" style={{ backgroundColor: '#191919', padding: '16px', borderRadius: '4px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <NoteLink onClick={() => alert('Note 1 clicked!')} />
+                <NoteLink onClick={() => alert('Note 2 clicked!')} />
+                <NoteLink onClick={() => alert('Note 3 clicked!')} />
+              </div>
+              <div className="component-test-code">
+                Multiple NoteLinks stacked vertically
               </div>
             </div>
           </div>
