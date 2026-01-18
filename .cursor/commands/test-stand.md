@@ -1,4 +1,5 @@
 # /test-stand
+**Usage**: `/test-stand` 
 Create and launch a production test stand to verify implementation WITHOUT committing to GitHub:
 
 1. **Check vite.config.ts** for correct base (for Pages: '/repo-name/').
