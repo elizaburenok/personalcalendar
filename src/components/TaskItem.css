@@ -10,11 +10,6 @@
   cursor: not-allowed;
 }
 
-.task-item__checkbox-wrapper {
-  flex-shrink: 0;
-  padding-top: 2px;
-}
-
 .task-item__checkbox {
   margin-top: 0;
 }
