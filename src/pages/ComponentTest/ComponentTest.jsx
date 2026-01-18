@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Checkbox, TaskText } from '../../components/atoms'
+import { Checkbox, DateText, DayOfWeekText, TaskText } from '../../components/atoms'
 import { TaskItem } from '../../components'
 import './ComponentTest.css'
 import '../../tokens/colors.css'
@@ -94,6 +94,76 @@ const ComponentTest = () => {
               </div>
               <div className="component-test-code">
                 Interactive checkbox with state tracking
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="component-test-section">
+          <h2>DateText</h2>
+          <div className="component-test-grid">
+            <div className="component-test-item">
+              <div className="component-test-label">Default (Russian Date Format)</div>
+              <div className="component-test-preview">
+                <DateText>16 января</DateText>
+              </div>
+              <div className="component-test-code">
+                &lt;DateText&gt;16 января&lt;/DateText&gt;
+              </div>
+            </div>
+
+            <div className="component-test-item">
+              <div className="component-test-label">Different Date</div>
+              <div className="component-test-preview">
+                <DateText>1 февраля</DateText>
+              </div>
+              <div className="component-test-code">
+                &lt;DateText&gt;1 февраля&lt;/DateText&gt;
+              </div>
+            </div>
+
+            <div className="component-test-item">
+              <div className="component-test-label">On Dark Background</div>
+              <div className="component-test-preview" style={{ backgroundColor: '#191919', padding: '16px', borderRadius: '4px' }}>
+                <DateText>16 января</DateText>
+              </div>
+              <div className="component-test-code">
+                DateText on dark background (as designed)
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="component-test-section">
+          <h2>DayOfWeekText</h2>
+          <div className="component-test-grid">
+            <div className="component-test-item">
+              <div className="component-test-label">Default (Russian Day Format)</div>
+              <div className="component-test-preview">
+                <DayOfWeekText>Понедельник</DayOfWeekText>
+              </div>
+              <div className="component-test-code">
+                &lt;DayOfWeekText&gt;Понедельник&lt;/DayOfWeekText&gt;
+              </div>
+            </div>
+
+            <div className="component-test-item">
+              <div className="component-test-label">Different Day</div>
+              <div className="component-test-preview">
+                <DayOfWeekText>Вторник</DayOfWeekText>
+              </div>
+              <div className="component-test-code">
+                &lt;DayOfWeekText&gt;Вторник&lt;/DayOfWeekText&gt;
+              </div>
+            </div>
+
+            <div className="component-test-item">
+              <div className="component-test-label">On Dark Background</div>
+              <div className="component-test-preview" style={{ backgroundColor: '#191919', padding: '16px', borderRadius: '4px' }}>
+                <DayOfWeekText>Понедельник</DayOfWeekText>
+              </div>
+              <div className="component-test-code">
+                DayOfWeekText on dark background (as designed)
               </div>
             </div>
           </div>
