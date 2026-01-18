@@ -1,7 +1,7 @@
 .task-item {
   display: flex;
   align-items: flex-start;
-  gap: var(--spacing-3x, 12px);
+  gap: var(--spacing-3-5x, 14px);
   width: 100%;
 }
 
