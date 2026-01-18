@@ -2,10 +2,11 @@ import { useState } from 'react'
 import { CalendarProvider } from './context/CalendarContext'
 import TypographyTest from './pages/TypographyTest'
 import Calendar from './pages/Calendar'
+import ComponentTest from './pages/ComponentTest'
 import './App.css'
 
 function App() {
-  const [currentView, setCurrentView] = useState('calendar')
+  const [currentView, setCurrentView] = useState('component-test')
 
   return (
     <CalendarProvider>
@@ -23,12 +24,18 @@ function App() {
             >
               Typography Test
             </button>
+            <button
+              onClick={() => setCurrentView('component-test')}
+            >
+              Component Test
+            </button>
           </nav>
         </header>
 
         <main className="app-main">
           {currentView === 'calendar' && <Calendar />}
           {currentView === 'typography' && <TypographyTest />}
+          {currentView === 'component-test' && <ComponentTest />}
         </main>
       </div>
     </CalendarProvider>
