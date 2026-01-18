@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Checkbox, DateText, DayOfWeekText, NoteLink, TaskText } from '../../components/atoms'
-import { TaskItem } from '../../components'
+import { DayHeader, TaskItem } from '../../components'
 import './ComponentTest.css'
 import '../../tokens/colors.css'
 import '../../tokens/typography.css'
@@ -201,6 +201,39 @@ const ComponentTest = () => {
               </div>
               <div className="component-test-code">
                 Multiple NoteLinks stacked vertically
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="component-test-section">
+          <h2>DayHeader (Assembled Component)</h2>
+          <div className="component-test-grid">
+            <div className="component-test-item component-test-item--full-width">
+              <div className="component-test-label">From Figma Design</div>
+              <div className="component-test-preview component-test-preview--task-item" style={{ backgroundColor: '#191919', padding: '16px', borderRadius: '4px' }}>
+                <DayHeader
+                  date="16 января"
+                  dayOfWeek="Понедельник"
+                  onNoteClick={() => alert('Note clicked!')}
+                />
+              </div>
+              <div className="component-test-code">
+                &lt;DayHeader date="16 января" dayOfWeek="Понедельник" onNoteClick={'{handleClick}'} /&gt;
+              </div>
+            </div>
+
+            <div className="component-test-item component-test-item--full-width">
+              <div className="component-test-label">Different Date</div>
+              <div className="component-test-preview component-test-preview--task-item" style={{ backgroundColor: '#191919', padding: '16px', borderRadius: '4px' }}>
+                <DayHeader
+                  date="1 февраля"
+                  dayOfWeek="Вторник"
+                  onNoteClick={() => alert('Note clicked!')}
+                />
+              </div>
+              <div className="component-test-code">
+                &lt;DayHeader date="1 февраля" dayOfWeek="Вторник" onNoteClick={'{handleClick}'} /&gt;
               </div>
             </div>
           </div>
